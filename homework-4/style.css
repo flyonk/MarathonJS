@@ -473,8 +473,34 @@ h1 {
     padding: 6px 0;
 }
 
-.playground-2 {
-    display: flex;
-    justify-content: flex-start;
+.logs {
+    width: 50%;
+    height: 350px;
+    margin: 0 auto;
+    border: 2px solid white;
+    overflow: hidden;
+    background: rgba(0,0,0, 0.3);
+    
 }
 
+.pLog {
+    color: white;
+    font-weight: bold;
+}
+
+.ggwp {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.stats {
+    color: black;
+    font-size: 17px;
+}
+
+.absorb {
+    color: #753ED3;
+    font-weight: bold;
+}
