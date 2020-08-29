@@ -478,7 +478,7 @@ h1 {
     height: 350px;
     margin: 0 auto;
     border: 2px solid white;
-    overflow: hidden;
+    overflow: auto;
     background: rgba(0,0,0, 0.3);
     
 }
@@ -493,6 +493,13 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     
+}
+
+.clickgg {
+    color: rgb(58, 5, 5);
+    font-size: 17px;
+    font-weight: bold;
+
 }
 
 .stats {
