@@ -1,9 +1,9 @@
-import { picachu, charmander } from "./pokemon.js"
+import { player1, player2 } from "./pokemon.js"
 
 const logdiv = document.querySelector('.logs');
 const kick2 = document.getElementById('kick2');
 const btn = document.getElementById('btn-kick');
-const hero = document.getElementById('health-character');
+const hero = document.getElementById('health-player1');
 let click = 0;
 let kick2_amount = 0;
 
@@ -36,7 +36,7 @@ export const renderHP = function renderHP() {
 export const changeHP = function changeHP(count) {
     this.hp.current -= count;
 
-    const log = this === charmander ? generateLog(this, picachu, count) : generateLog(this, charmander, count);
+    const log = this === player2 ? generateLog(this, player1, count) : generateLog(this, player2, count);
 
     const p = document.createElement('p');
     p.classList.add('pLog')
@@ -83,8 +83,8 @@ export const generateLog = function generateLog(person, secondPerson, count) {
 }
 
 export const countBtn = function countBtn(count = 7, knopka) {
-    const innerText = kick2.innerText
-    kick2.innerText = `${innerText} (${count})`
+    const innerText = knopka.innerText
+    knopka.innerText = `${innerText} (${count})`
 
     return function () {
         count--
@@ -92,7 +92,7 @@ export const countBtn = function countBtn(count = 7, knopka) {
             knopka.disabled = true;
             kick2.style.borderColor = "#EA0603"
         }
-        kick2.innerText = `${innerText} (${count})`
+        knopka.innerText = `${innerText} (${count})`
         return count;
     }
 }

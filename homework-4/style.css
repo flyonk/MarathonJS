@@ -42,6 +42,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-self: space-between;
 }
 
 .playground {
@@ -276,6 +279,9 @@ body {
     outline: none !important;
     cursor: pointer;
     font-size: 18px;
+    min-width: 35%;
+    margin-left: 20px;
+    
 
 }
 .button:after {
@@ -510,4 +516,8 @@ h1 {
 .absorb {
     color: #753ED3;
     font-weight: bold;
+}
+
+#btn-kick {
+    display: none;
 }

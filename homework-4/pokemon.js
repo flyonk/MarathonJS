@@ -1,13 +1,17 @@
+import { renderHPLife, renderProgressBar, absorbChance, changeHP, renderHP, generateLog, } from "./utilts.js"
+import { pokemons } from "./pokemons.js"
+
 class Pokemon {
-    constructor(props) {
-        this.name = props.name;
-        this.type = props.type;
+    constructor({name, hp, type, elHP, elProgressbar, attacks = []}) {
+        this.name = name;
+        this.type = type;
         this.hp = {
-            default: props.hp,
-            current: props.hp
+            default: hp,
+            current: hp
         };
-        this.elHP = props.elHP;
-        this.elProgressbar = props.elProgressbar;
+        this.attacks = attacks;
+        this.elHP = elHP;
+        this.elProgressbar = elProgressbar;
         this.renderHPLife = renderHPLife;
         this.renderProgressBar = renderProgressBar;
         this.renderHP = renderHP;
@@ -16,48 +20,23 @@ class Pokemon {
     
 }
 
-// class Picachu2 extends Pokemon {
+const pikachu = pokemons.find(item => item.name == 'Pikachu');
+const Charmander = pokemons.find(item => item.name == "Charmander");
 
-// }
 
-export const picachu = new Pokemon({
-    name: 'Picachu',
-    type: 'Electric',
-    hp: '200',
-    elHP: document.getElementById('health-character'),
-    elProgressbar: document.getElementById('progressbar-character'),
+
+
+export const player1 = new Pokemon({
+    ...pikachu,
+    elHP: document.getElementById('health-player1'),
+    elProgressbar: document.getElementById('progressbar-player1'),
 })
 
-export const charmander = new Pokemon({
-    name: 'Charmander',
-    type: 'Fire',
-    hp: '200',
-    elHP: document.getElementById('health-enemy'),
-    elProgressbar: document.getElementById('progressbar-enemy'),
+export const player2 = new Pokemon({
+    ...Charmander,
+    elHP: document.getElementById('health-player2'),
+    elProgressbar: document.getElementById('progressbar-player2'),
 })
-
-// class Bulbasaur extends Pokemon {
-//     constructor(props) {
-//         super(props);
-//         this.hz = props.hz = 5;
-//     }
-// }
-
-// const Bulbasaur1 = new Bulbasaur({
-//     name: 'Bulbash',
-//     type: 'Earth',
-//     hp: '300'
-// })
-
-console.log(picachu, charmander);
-
-
-
-
-import { renderHPLife, renderProgressBar, absorbChance, changeHP, renderHP, generateLog, } from "./utilts.js"
-
-
-
 
 
 
